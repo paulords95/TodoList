@@ -1,0 +1,186 @@
+.header {
+    justify-content: center;
+    width: 50%;
+    flex-direction: column;
+}
+
+
+.btnAdd {
+    margin: auto;
+    width: auto;
+}
+
+.addItem {
+    background-color: rgb(242, 242, 247);
+    width: 100%;
+    height: 0;
+    transition: height 400ms;
+}
+
+
+
+
+.hideExpand {
+    height: 20rem;
+}
+.hideContent {
+    display: none;
+}
+
+.clickedBackColor {
+    background-color: rgb(71, 127, 187);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.saveBtn {
+    background-color: rgb(164, 164, 218);
+    width: auto;
+    margin-top: 1vh;
+    min-width: -moz-min-content;
+}
+
+.saveBtn:hover {
+    background-color: rgb(155, 155, 196);
+}
+
+.title {
+    margin: auto;
+    width: 80%;
+    margin-top: 2vh;
+    height: 2.5rem;
+}
+
+
+
+.description {
+    margin: auto;
+    width: 80%;
+    margin-top: 1vh;
+    resize: none;
+    height: 6.5rem;
+    word-break: break-word;
+}
+
+.dueDate {
+    margin: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vh;
+    text-align: center;
+}
+
+.datePick {
+    width: auto;
+    margin-top: 1vh;
+    height: 2.5rem;
+    float: 5px;
+    min-width: -moz-available;
+    text-align: center;
+}
+
+.text {
+    margin-top: 1.7vh;
+    margin-right: 2vh;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+.priority {
+    display: flex;
+    margin: auto;
+    width: 30%;
+    margin-top: 1vh;
+    height: 2.5rem;
+    margin-left: 4vh;
+}
+@media only screen and (max-width: 4920px) {
+    .priority {
+        margin: 0 auto;
+        margin-top: 1vh;
+        min-width: max-content;
+        min-height: max-content;
+    }
+  }
+
+
+.duePriorBox {
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+    flex-flow: wrap;
+    width: max-content;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.datePicker {
+    width: 17vh;
+    display: block;
+    margin-inline: 5%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .duePriorBox {
+        width: max-content;
+    }
+  }
+
+@media only screen and (max-width: 880px) {
+    .dueDate {
+        display: table-column;
+        margin: 2 auto;
+    }
+  }
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; } 
+    }
+    @-moz-keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1; }
+    }
+    @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+    @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+
+    .fadeIn {
+        -webkit-animation: fadeIn 1s ease-in-out;
+        -moz-animation: fadeIn 1s ease-in-out;
+        -o-animation: fadeIn 1s ease-in-out;
+        animation: fadeIn 1s ease-in-out;
+        }
+
+    .select {
+        border-radius: 0;
+        padding-left: 10px;
+        margin-inline: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+        background-repeat: no-repeat;
+        background-position: right;
+        min-width: -moz-max-content;
+    }
