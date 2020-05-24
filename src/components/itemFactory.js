@@ -1,9 +1,8 @@
-function item (title, desc, due, priority)  {
-    this.title = title
-    this.desc = desc
-    this.due = due
-    this.priority = priority
+function item (title, text, due, priority) {
+  this.title = title
+  this.text = text
+  this.due = due
+  this.priority = priority
 }
-
 
 export default item

@@ -1,63 +1,78 @@
-import React, {useState} from 'react';
-import './App.css';
-import {NewItem, newObjs} from './components/newItem'
+import React, { useState } from 'react'
+import './App.css'
+import NewItem from './components/newItem'
 import ToDoItem from './components/toDoItem'
-import DatePicker, {registerLocale} from "react-datepicker";
+import DatePicker, { registerLocale } from 'react-datepicker'
 
-function App() {
-  const [startDate, setStartDate] = useState (null)
+function App () {
+  const [startDate, setStartDate] = useState(null)
 
-  const monthsBG = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-  const daysBG = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const monthsBG = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+  const daysBG = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
-registerLocale('bg', {
-  localize: {
-    month: n => monthsBG[n],
-    day: n => daysBG[n]
-  }, 
-  formatLong:{} 
-});
-
-
+  registerLocale('bg', {
+    localize: {
+      month: n => monthsBG[n],
+      day: n => daysBG[n]
+    },
+    formatLong: {}
+  })
 
   const datePicker = <DatePicker
-                        selected={startDate}
-                        onChange={date => setStartDate(date)}
-                        withPortal
-                        placeholderText="Selecionar o prazo"
-                        showTimeSelect
-                        locale='bg'
-                        timeFormat="HH:mm"
-                        timeIntervals={15}
-                        timeCaption="Hora"
-                        dateFormat="d MMMM, yyyy HH:mm"
-                        className='datepicker'
-                    />
-   
+    selected={startDate}
+    onChange={date => setStartDate(date)}
+    withPortal
+    placeholderText='Selecionar o prazo'
+    showTimeSelect
+    locale='bg'
+    timeFormat='HH:mm'
+    timeIntervals={15}
+    timeCaption='Hora'
+    dateFormat='d MMMM, yyyy HH:mm'
+    className='datepicker'
+                     />
 
+  const [itens, setItens] = useState([])
 
-  for (let i of newObjs) {
-    console.log(i)
+  const itemAdd = (item) => {
+    setItens(itens.concat([item]))
   }
 
+  const itemIterate = []
+  for (const [index, item] of itens.entries()) {
+    console.log(item)
+    itemIterate.push(
+      <ToDoItem
+        key={index}
+        title={item.title}
+        text={item.text}
+        dueDate={item.dueDate}
+        priority={item.priority}
+      />
+    )
+  }
 
-  
+  if (itemIterate.length === 0) {
+    itemIterate.push(
+      <div key='Nenhum'>
+        Nenhuma atividade gravada.
+      </div>
+    )
+  }
+  console.log(itemIterate)
+
   return (
-    
+
     <div className='content-center'>
       <NewItem
-        datePick = {datePicker}
+        datePick={datePicker}
+        onAdd={itemAdd}
       />
-      <div className="App flex container mx-auto">
-          <ToDoItem
-            title = 'Lorem Ipsum'
-            description= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-            dueDate= '22 Maio, 2020 16:15'
-            priority='Alta'
-          />
+      <div className='App flex container mx-auto'>
+        {itemIterate}
       </div>
     </div>
   )
 }
 
-export default App;
+export default App
