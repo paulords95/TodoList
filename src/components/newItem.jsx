@@ -16,7 +16,9 @@ const NewItem = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const itemAdded = new item(itens.title, itens.text, document.querySelector('.datepicker').value, itens.priority)
+
+    let dueDate = document.querySelector('.datepicker').value
+    const itemAdded = new item(itens.title, itens.text, dueDate , itens.priority)
     props.onAdd(itemAdded)
   }
 
@@ -74,12 +76,12 @@ const NewItem = (props) => {
                         dueDate: itens.dueDate,
                         priority: e.target.value
                       })
-                    })} defaultValue='DEFAULT' className='select rounded block appearance-none w-full bg-gray-400 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500' id='grid-state'
+                    })} defaultValue='DEFAULT' className='select rounded block focus:outline-none appearance-none w-full bg-gray-400 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500' id='grid-state'
                   >
-                    <option value='DEFAULT' disabled>Prioridade</option>
-                    <option className='bg-green-200'>Baixa</option>
-                    <option className='bg-yellow-300'>Média</option>
-                    <option className='bg-red-600'>Alta</option>
+                    <option value='DEFAULT' className='focus:outline-none' disabled>Prioridade</option>
+                    <option className='focus:outline-none'>Baixa</option>
+                    <option className='focus:outline-none'>Média</option>
+                    <option className='focus:outline-none'>Alta</option>
                   </select>
                 </label>
                 <input type='submit' value='Inserir' className='saveBtn mx-auto text-white font-bold py-2 px-4 rounded' />

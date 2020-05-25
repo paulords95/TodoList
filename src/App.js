@@ -40,14 +40,39 @@ function App () {
 
   const itemIterate = []
   for (const [index, item] of itens.entries()) {
-    console.log(item)
+    let titleProp
+    let textProp
+    let dueProp
+    let priorityProp
+ 
+    if (item.title === "") {
+      titleProp = 'Sem título'
+    } else {
+      titleProp = item.title
+    }
+    if (item.text === "") {
+      textProp = 'Não há nenhuma descrição.'
+    } else {
+      textProp = item.text
+    }
+    if (item.due === "") {
+      dueProp = 'Sem prazo definido'
+    } else {
+      dueProp = item.due
+    }
+    if (item.priority === "") {
+      priorityProp = 'Sem prioridade definida'
+    } else {
+      priorityProp = item.priority
+    }
+  
     itemIterate.push(
       <ToDoItem
         key={index}
-        title={item.title}
-        text={item.text}
-        dueDate={item.dueDate}
-        priority={item.priority}
+        title={titleProp}
+        text={textProp}
+        dueDate={dueProp}
+        priority={priorityProp}
       />
     )
   }
@@ -59,7 +84,6 @@ function App () {
       </div>
     )
   }
-  console.log(itemIterate)
 
   return (
 

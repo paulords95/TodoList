@@ -2,6 +2,7 @@
   text-align: center;
   flex-flow: wrap;
   justify-content: center;
+  
 }
 
 @media only screen and (max-width: 600px) {

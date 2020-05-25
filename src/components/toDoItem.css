@@ -2,12 +2,15 @@
     flex-flow: wrap;
     outline-width: thick;
     outline-style: initial;
+
+    flex: 1 1 160px;
+    flex-basis: 20%;
 }
 
 
 .item {
     width: 20rem;
-    min-height: 30vh;
+    min-height: max-content;
     min-width: 20vh;
 }
 
@@ -16,3 +19,17 @@
 }
 
 
+.btnDone {
+    margin: 1vh;
+    margin-left: 0vh;
+}
+
+.btnDelete {
+    margin: 1vh;
+    margin-right: -20vh;
+}
+
+.statusDone {
+    margin: 0 0 0 -15vh;
+    margin-bottom: -2.3rem;
+}
