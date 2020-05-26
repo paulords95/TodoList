@@ -19,17 +19,20 @@
 }
 
 
-.btnDone {
-    margin: 1vh;
-    margin-left: 0vh;
-}
-
 .btnDelete {
-    margin: 1vh;
-    margin-right: -20vh;
+    margin-left: 15vh;
+    padding: 0px 5px 0px;
+
 }
 
 .statusDone {
-    margin: 0 0 0 -15vh;
-    margin-bottom: -2.3rem;
+    margin-left: -1vh;
+}
+.btnDone {
+    padding: 0px 5px 0px;
+}
+
+.btnsContainer {
+    display: inline-flex;
+    margin-top: 2vh;
 }

@@ -66,6 +66,22 @@ function App () {
       priorityProp = item.priority
     }
   
+
+    const removeItem = (item) => {
+      let arrayItens =Array.prototype.slice.call(document.querySelectorAll('.itemContainer'))
+      let renderedItens = [].concat(itens)
+      let index
+      for(let i in arrayItens) {
+        if (arrayItens[i] === item) {
+          index = i
+        }
+      }
+      renderedItens.splice(index, 1)
+      setItens(renderedItens)
+    }
+
+
+
     itemIterate.push(
       <ToDoItem
         key={index}
@@ -73,6 +89,7 @@ function App () {
         text={textProp}
         dueDate={dueProp}
         priority={priorityProp}
+        removeItem={removeItem}
       />
     )
   }
